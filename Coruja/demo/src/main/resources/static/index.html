@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Corujão na Casa do Bot</h1>
-    <br><br>
-    <input type="text" id="nome" placeholder="Digite seu nome">
-    <br><br>
-    <input type="text" id="vai?" placeholder="Informe se vai ou não">
-    <br><br>
-    <input type="checkbox" id="levar"> Levar algo?
-    <br><br>
-    <input type="text" id="oque" placeholder="O que vai levar?">
-    <br><br>
-    <button id="Enviar">Enviar</button>
-    <br><br>
-    <button id="QuemVai">Quem vai?</button>
+    <form action="http://localhost:8080/enviar" method="POST">
+
+        <h1>Corujão na Casa do Bot</h1>
+        <br><br>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+        <br><br>
+        <input type="text" id="vai" name="vai" placeholder="Informe se vai ou não">
+        <br><br>
+        <input type="text" id="levar" name="levar" placeholder="Vai levar algo? O quê?">
+        <br><br>
+        <button type="submit">Enviar</button>
+
+    </form>
+        <br><br>
+        <button id="QuemVai">Quem vai?</button>
 </body>
 </html>
