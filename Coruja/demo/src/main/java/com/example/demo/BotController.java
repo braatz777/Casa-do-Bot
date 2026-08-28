@@ -41,4 +41,12 @@ public class BotController {
 
         return "index";
     }
+
+    @PostMapping("/excluir")
+    public String excluirRespostas() {
+
+        respostas.clear();
+
+        return "redirect:/";
+    }
 }
