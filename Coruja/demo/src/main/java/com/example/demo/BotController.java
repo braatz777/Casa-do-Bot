@@ -1,13 +1,20 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Controller
 public class BotController {
 
     private List<Resposta> respostas = new ArrayList<>();
+
+    @GetMapping("/")
+    public String inicio(Model model) {
+        return "index";
+    }
 
     @PostMapping("/enviar")
     public String receberDados(
@@ -24,11 +31,14 @@ public class BotController {
         System.out.println("Vai: " + vai);
         System.out.println("Levar: " + levar);
 
-        return "Dados recebidos!";
+        return "redirect:/";
     }
 
-    @GetMapping("/respostas")
-    public List<Resposta> mostrarRespostas() {
-        return respostas;
+    @GetMapping("/quem-vai")
+    public String quemVai(Model model) {
+
+        model.addAttribute("respostas", respostas);
+
+        return "index";
     }
 }
